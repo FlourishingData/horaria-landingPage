@@ -21,7 +21,7 @@ reduzierter, austauschbarer Einstiegspunkt.
 ```
 ├── index.html          # Startseite (CSP als Meta-Tag, deklaratives HTML)
 ├── 404.html            # GitHub Pages zeigt diese Datei automatisch bei 404
-├── CNAME               # Custom Domain (horaria.ch)
+├── CNAME               # Custom Domain (horarium.ch)
 ├── .nojekyll           # Jekyll-Verarbeitung überspringen
 ├── css/
 │   └── styles.css      # Design-Tokens aus dem "Drafting Table"-Stil der App
@@ -34,11 +34,11 @@ reduzierter, austauschbarer Einstiegspunkt.
 ## Konfiguration
 
 **Login-Ziel:** In `js/main.js` die Konstante `APP_URL` setzen
-(Standard: `https://app.horaria.ch`). Alle Elemente mit der Klasse
+(Standard: `https://app.horarium.ch`). Alle Elemente mit der Klasse
 `js-login-link` werden darauf zeigen. Der Identity Provider muss die
 Redirect-URIs beider Domains kennen (arc42 §4.5).
 
-**Domain:** `CNAME` enthält `horaria.ch`. Beim DNS-Provider die GitHub-Pages-
+**Domain:** `CNAME` enthält `horarium.ch`. Beim DNS-Provider die GitHub-Pages-
 Records setzen (siehe [GitHub-Doku](https://docs.github.com/pages/configuring-a-custom-domain-for-your-github-pages-site)):
 Apex: `A`-Records auf `185.199.108.153` … `185.199.111.153`,
 Subdomain (`www`): `CNAME` auf `<user>.github.io`. HTTPS in den

@@ -7,7 +7,7 @@
  *
  * NOTE: Adjust once the app domain is finalized.
  */
-const APP_URL = 'https://app.horaria.ch';
+const APP_URL = 'https://app.horarium.ch';
 
 document.querySelectorAll('.js-login-link').forEach((link) => {
   link.setAttribute('href', APP_URL);
