@@ -3,15 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; base-uri 'none'; form-action 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; connect-src 'self'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
   <title>Seite nicht gefunden — horaria</title>
+  <link rel="icon" href="assets/images/Horaria_Logo.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
   <main class="hero">
     <div class="container">
       <p class="eyebrow">404</p>
-      <h1>Diese Seite existiert nicht.</h1>
+      <h1>Diese Seite existiert <span class="accent">nicht</span>.</h1>
       <p class="lede">Der Link ist ungültig oder die Seite wurde verschoben.</p>
       <div class="cta-row">
         <a class="btn btn-outline btn-lg" href="/">Zurück zur Startseite</a>

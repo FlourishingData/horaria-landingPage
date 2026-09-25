@@ -4,27 +4,28 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Security headers as meta tags (arc42 §4.4). Note: frame-ancestors/HSTS
-       cannot be set via meta and are provided by GitHub Pages / the browser. -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; base-uri 'none'; form-action 'none'">
+  <!-- Security headers (arc42 §4.4). All assets self-hosted — CSP stays strict.
+       frame-ancestors/HSTS cannot be set via meta; HTTPS is enforced at the host. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; connect-src 'self'; base-uri 'none'; form-action 'none'">
   <meta name="referrer" content="strict-origin-when-cross-origin">
 
-  <title>horaria — Fahrplanplanung, mühelos</title>
-  <meta name="description" content="horaria ist die Plattform für die Planung öffentlicher Verkehrsangebote — vom Fahrplan bis zu den Ressourcen, die ihn fahren.">
+  <title>horaria — Die Planungsplattform für öffentlichen Verkehr</title>
+  <meta name="description" content="horaria deckt die Planungskette öffentlicher Verkehrsangebote ab: Fahrplanplanung heute, Umlauf- und Dienstplanung als nächste Schritte. Im Browser, ohne Installation.">
 
-  <!-- Design language: Space Grotesk + IBM Plex Mono (self-host later to tighten CSP) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
-
+  <link rel="icon" href="assets/images/Horaria_Logo.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/styles.css">
   <script src="js/main.js" defer></script>
 </head>
 <body>
   <header class="site-header">
     <div class="container header-row">
-      <a class="logo" href="/">horaria</a>
-      <a class="btn btn-primary js-login-link" href="https://app.horaria.ch">Login</a>
+      <a class="logo" href="/" aria-label="horaria — Startseite">
+        <img src="assets/images/Horaria_Logo.svg" alt="horaria" width="118" height="40">
+      </a>
+      <nav class="header-nav">
+        <a class="nav-link" href="#features">Funktionen</a>
+        <a class="btn btn-primary js-login-link" href="https://app.horarium.ch">Login</a>
+      </nav>
     </div>
   </header>
 
@@ -32,59 +33,129 @@
     <section class="hero">
       <div class="container">
         <p class="eyebrow">Public-Transport-Planning-Plattform</p>
-        <h1>Vom Fahrplan bis zum Betrieb.<br>Ein Werkzeug.</h1>
+        <h1>Die Planungsplattform für <span class="accent">öffentlichen Verkehr</span>.</h1>
         <p class="lede">
-          horaria deckt die gesamte Planungskette ab — Fahrplanplanung heute,
-          Umlauf- und Dienstplanung als nächste Schritte. Ohne Schulung,
-          ohne Installation, direkt im Browser.
+          Vom Fahrplan bis zur Dienstplanung: horaria führt die gesamte
+          Planungskette in einer Oberfläche zusammen — im Browser, im Team,
+          in Echtzeit.
         </p>
         <div class="cta-row">
-          <a class="btn btn-primary btn-lg js-login-link" href="https://app.horaria.ch">Zur App</a>
-          <a class="btn btn-outline btn-lg" href="#features">Mehr erfahren</a>
+          <a class="btn btn-primary btn-lg js-login-link" href="https://app.horarium.ch">Jetzt starten</a>
+          <a class="btn btn-outline btn-lg" href="#features">Funktionen ansehen</a>
         </div>
       </div>
     </section>
 
-    <section id="features" class="features">
+    <section class="stats" aria-label="Kennzahlen">
+      <div class="container stats-grid">
+        <div class="stat">
+          <span class="stat-value">3</span>
+          <span class="stat-label">Planungsstufen, eine Plattform</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">&lt; 5 Min.</span>
+          <span class="stat-label">bis zum ersten Fahrplan</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">100 %</span>
+          <span class="stat-label">im Browser — keine Installation</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">GTFS</span>
+          <span class="stat-label">Import &amp; Export inklusive</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="section">
       <div class="container">
-        <h2>Die Planungskette</h2>
-        <div class="feature-grid">
-          <article class="feature-card">
+        <p class="eyebrow">Die Planungskette</p>
+        <h2>Jede Stufe baut auf der vorherigen auf.</h2>
+        <p class="section-intro">
+          Ein gültiger Fahrplan speist die Umlaufplanung, Umläufe speisen die
+          Dienstplanung. Vom leeren Projekt bis zum vollständig ausgestatteten
+          Betrieb — ohne das Werkzeug zu wechseln.
+        </p>
+        <div class="card-grid">
+          <article class="card">
+            <p class="card-index">01</p>
             <h3>Fahrplanplanung</h3>
             <p>
               Linien, Strecken und Fahrten mit einer Oberfläche, die sich von
-              selbst erklärt. Gemeinsam im Team, in Echtzeit. Import und Export
-              offener Formate inklusive GTFS.
+              selbst erklärt. Gemeinsam im Team, in Echtzeit — mit Import und
+              Export offener Formate inklusive GTFS.
             </p>
+            <p class="badge">Verfügbar</p>
           </article>
-          <article class="feature-card">
-            <p class="badge">In Planung</p>
+          <article class="card">
+            <p class="card-index">02</p>
             <h3>Umlaufplanung</h3>
             <p>
               Fahrten zu Umläufen und Werkungen zusammenfassen, Fahrzeuge
               optimal auslasten und sehen, wie viele Fahrzeuge ein Fahrplan
               wirklich braucht.
             </p>
-          </article>
-          <article class="feature-card">
             <p class="badge">In Planung</p>
+          </article>
+          <article class="card">
+            <p class="card-index">03</p>
             <h3>Dienstplanung</h3>
             <p>
               Dienste, Schichten und Dienstpläne auf Basis der Umläufe planen —
-              vom leeren Projekt bis zum vollständig ausgestatteten Betrieb.
+              bis hinunter zur einzelnen Fahrerkraft.
             </p>
+            <p class="badge">In Planung</p>
           </article>
         </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <p class="eyebrow">Warum horaria</p>
+        <h2>Gebaut für Planer:innen.</h2>
+        <ul class="feature-list">
+          <li>
+            <h3>Echtzeit-Zusammenarbeit</h3>
+            <p>Mehrere Planer:innen arbeiten am selben Fahrplan — Änderungen sind sofort für alle sichtbar.</p>
+          </li>
+          <li>
+            <h3>Veröffentlichen &amp; einfrieren</h3>
+            <p>Planperioden werden unter einem Stand veröffentlicht und sind danach unveränderbar — Korrekturen laufen in einer neuen Periode.</p>
+          </li>
+          <li>
+            <h3>Offene Formate</h3>
+            <p>GTFS-Import und -Export gehören zum Kern. Datenhoheit bleibt bei Ihnen.</p>
+          </li>
+          <li>
+            <h3>Für Teams &amp; Agenturen</h3>
+            <p>Mehrere Unternehmen in einer Installation — jede Organisation mit ihren eigenen Daten.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="container">
+        <p class="eyebrow">Bereit?</p>
+        <h2>Ihr nächster Fahrplan beginnt hier.</h2>
+        <p>Melden Sie sich an und legen Sie direkt los — ohne Installation, ohne Schulung.</p>
+        <a class="btn btn-primary btn-lg js-login-link" href="https://app.horarium.ch">Zur App</a>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-row">
-      <p>&copy; <span id="current-year">2025</span> horaria</p>
-      <nav>
-        <a href="#">Impressum</a>
-        <a href="#">Datenschutz</a>
+      <p class="footer-brand">
+        <a class="logo" href="/" aria-label="horaria — Startseite">
+          <img src="assets/images/Horaria_Logo.svg" alt="horaria">
+        </a>
+        <span>&copy; <span id="current-year">2026</span> horaria</span>
+      </p>
+      <nav class="footer-nav">
+        <a href="/impressum.html">Impressum</a>
+        <a href="/datenschutz.html">Datenschutz</a>
       </nav>
     </div>
   </footer>

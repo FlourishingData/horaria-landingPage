@@ -1,9 +1,35 @@
 /* ═══════════════════════════════════════════════════════════════
-   horaria landing page — "Drafting Table" design language
-   (warm paper, indigo ink, hairline rules; coral marks the action)
-   Tokens aligned with horaria/mockups/styles.css
+   horaria landing page
+   Bold corporate look (ref: katzmedia.com) in horaria brand colors:
+   deep navy + amber, oversized type, stats band, group cards.
    ═══════════════════════════════════════════════════════════════ */
 
+/* ─── Fonts (self-hosted — no third-party requests, strict CSP) ─── */
+@font-face {
+  font-family: 'Space Grotesk';
+  src: url('../assets/fonts/SpaceGrotesk-var.ttf') format('truetype-variations');
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  src: url('../assets/fonts/IBMPlexMono-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  src: url('../assets/fonts/IBMPlexMono-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ─── Tokens ─── */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -11,49 +37,66 @@
 }
 
 :root {
-  /* Paper & ink */
-  --paper: #f7f4ec;
-  --surface: #fffefb;
-  --ink: #24315e;
-  --ink-soft: #4a5478;
-  --ink-faint: #8a8fa6;
-  --line: #ddd8c8;
-  --line-strong: #c9c4b4;
+  /* Brand (from Horaria_Logo.svg) */
+  --navy-800: #16324f;
+  --amber: #f59e0b;
+  --amber-light: #fbbf24;
 
-  /* Accents */
-  --primary: #e4572e;          /* coral — the action */
-  --primary-dark: #c2441f;
-  --blueprint: #5b7db1;        /* links, secondary accents */
+  /* Dark corporate scale */
+  --bg: #0b1928;
+  --bg-raised: #10253c;
+  --surface: #16324f;
+  --text: #e9eff6;
+  --text-muted: #96a8bf;
+  --line: rgba(233, 239, 246, 0.14);
+  --line-strong: rgba(233, 239, 246, 0.28);
 
-  /* Shape & depth — paper stack, not floating cards */
-  --radius: 4px;
-  --shadow: 3px 3px 0 rgba(36, 49, 94, 0.08);
+  /* Light band (legal pages, readability) */
+  --paper: #f4f6f9;
+  --paper-text: #1c2b3f;
+  --paper-muted: #51637b;
 
-  /* Type */
-  --font-sans: 'Space Grotesk', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --radius: 6px;
+  --font-sans: 'Space Grotesk', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   font-family: var(--font-sans);
-  background-color: var(--paper);
-  background-image: radial-gradient(var(--line) 1px, transparent 1px);
-  background-size: 24px 24px;
-  color: var(--ink);
+  background-color: var(--bg);
+  color: var(--text);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
 
 .container {
-  max-width: 64rem;
+  max-width: 72rem;
   margin-inline: auto;
   padding-inline: 1.5rem;
 }
 
+/* ─── Eyebrow micro-label ─── */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--amber);
+}
+
 /* ─── Header ─── */
 .site-header {
-  border-bottom: 1px solid var(--line-strong);
-  background: var(--surface);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(11, 25, 40, 0.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
 }
 
 .header-row {
@@ -64,154 +107,386 @@ body {
 }
 
 .logo {
-  font-family: var(--font-mono);
-  font-weight: 500;
-  font-size: 1.25rem;
-  color: var(--ink);
+  display: inline-block;
+  background: var(--text);
+  border-radius: var(--radius);
+  padding: 0.35rem 0.6rem;
+  line-height: 0;
+}
+
+.logo img {
+  height: 1.5rem;
+  width: auto;
+  display: block;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.header-nav a.nav-link {
+  color: var(--text-muted);
   text-decoration: none;
-  letter-spacing: 0.02em;
+  font-weight: 500;
+}
+
+.header-nav a.nav-link:hover {
+  color: var(--text);
+}
+
+/* ─── Buttons ─── */
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.25rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.btn-lg {
+  padding: 0.85rem 1.75rem;
+  font-size: 1.125rem;
+}
+
+.btn-primary {
+  background: var(--amber);
+  color: var(--bg);
+}
+
+.btn-primary:hover {
+  background: var(--amber-light);
+}
+
+.btn-outline {
+  background: transparent;
+  border-color: var(--line-strong);
+  color: var(--text);
+}
+
+.btn-outline:hover {
+  border-color: var(--text);
 }
 
 /* ─── Hero ─── */
 .hero {
-  padding-block: 5rem 4rem;
-}
-
-.eyebrow {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--blueprint);
-  margin-bottom: 1rem;
+  padding-block: 6rem 5rem;
+  border-bottom: 1px solid var(--line);
+  background:
+    radial-gradient(60rem 30rem at 80% -10%, rgba(245, 158, 11, 0.12), transparent 60%),
+    var(--bg);
 }
 
 .hero h1 {
-  font-size: clamp(2rem, 5vw, 3rem);
-  line-height: 1.15;
-  max-width: 20ch;
+  margin-top: 1rem;
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  max-width: 18ch;
+}
+
+.hero h1 .accent {
+  color: var(--amber);
 }
 
 .lede {
-  margin-top: 1.25rem;
-  max-width: 56ch;
-  font-size: 1.125rem;
-  color: var(--ink-soft);
+  margin-top: 1.5rem;
+  max-width: 58ch;
+  font-size: 1.25rem;
+  color: var(--text-muted);
 }
 
 .cta-row {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
-  margin-top: 2rem;
+  margin-top: 2.5rem;
 }
 
-/* ─── Buttons ─── */
-.btn {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  border: 1px solid var(--ink);
-  border-radius: var(--radius);
-  font-family: var(--font-sans);
-  font-weight: 500;
-  text-decoration: none;
-  cursor: pointer;
-  box-shadow: var(--shadow);
+/* ─── Stats band ─── */
+.stats {
+  border-bottom: 1px solid var(--line);
+  background: var(--bg-raised);
 }
 
-.btn-lg {
-  padding: 0.75rem 1.5rem;
-  font-size: 1.0625rem;
-}
-
-.btn-primary {
-  background: var(--primary);
-  border-color: var(--primary-dark);
-  color: #fff;
-}
-
-.btn-primary:hover {
-  background: var(--primary-dark);
-}
-
-.btn-outline {
-  background: var(--surface);
-  color: var(--ink);
-}
-
-.btn-outline:hover {
-  border-color: var(--ink);
-}
-
-/* ─── Features ─── */
-.features {
-  padding-block: 3rem 5rem;
-  border-top: 1px solid var(--line);
-  background: var(--surface);
-}
-
-.features h2 {
-  margin-bottom: 1.5rem;
-}
-
-.feature-grid {
+.stats-grid {
   display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
 }
 
-.feature-card {
+.stat {
+  padding: 2.5rem 1.5rem;
+  border-inline-start: 1px solid var(--line);
+}
+
+.stat:first-child {
+  border-inline-start: none;
+}
+
+.stat-value {
+  display: block;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--amber);
+}
+
+.stat-label {
+  display: block;
+  margin-top: 0.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+
+/* ─── Sections ─── */
+.section {
+  padding-block: 5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.section h2 {
+  margin-top: 0.75rem;
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.section-intro {
+  margin-top: 1rem;
+  max-width: 62ch;
+  font-size: 1.125rem;
+  color: var(--text-muted);
+}
+
+/* ─── Group cards (ref: katzmedia.com) ─── */
+.card-grid {
+  display: grid;
+  gap: 1px;
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  margin-top: 2.5rem;
+  background: var(--line);
   border: 1px solid var(--line);
-  border-radius: var(--radius);
-  background: var(--paper);
-  box-shadow: var(--shadow);
-  padding: 1.25rem;
 }
 
-.feature-card h3 {
-  margin-bottom: 0.5rem;
+.card {
+  background: var(--bg-raised);
+  padding: 2rem 1.5rem;
+  transition: background-color 0.15s ease;
 }
 
-.feature-card p {
-  color: var(--ink-soft);
+.card:hover {
+  background: var(--surface);
+}
+
+.card-index {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  color: var(--amber);
+}
+
+.card h3 {
+  margin-top: 0.75rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.card p {
+  margin-top: 0.75rem;
+  color: var(--text-muted);
 }
 
 .badge {
   display: inline-block;
-  margin-bottom: 0.5rem;
-  padding: 0.125rem 0.5rem;
-  border: 1px solid var(--blueprint);
+  margin-top: 1rem;
+  padding: 0.2rem 0.6rem;
+  border: 1px solid var(--line-strong);
   border-radius: var(--radius);
   font-family: var(--font-mono);
   font-size: 0.6875rem;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--blueprint);
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+
+/* ─── Feature list ─── */
+.feature-list {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  margin-top: 2.5rem;
+  list-style: none;
+}
+
+.feature-list li {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  background: var(--bg-raised);
+}
+
+.feature-list h3 {
+  font-size: 1.125rem;
+}
+
+.feature-list p {
+  margin-top: 0.5rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* ─── CTA band ─── */
+.cta-band {
+  background: var(--amber);
+  color: var(--bg);
+  padding-block: 4.5rem;
+}
+
+.cta-band .eyebrow {
+  color: rgba(11, 25, 40, 0.7);
+}
+
+.cta-band h2 {
+  margin-top: 0.75rem;
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  max-width: 24ch;
+}
+
+.cta-band p {
+  margin-top: 1rem;
+  max-width: 56ch;
+  font-size: 1.125rem;
+  color: rgba(11, 25, 40, 0.8);
+}
+
+.cta-band .btn {
+  margin-top: 2rem;
+}
+
+.cta-band .btn-primary {
+  background: var(--bg);
+  color: var(--amber);
+}
+
+.cta-band .btn-primary:hover {
+  background: var(--navy-800);
 }
 
 /* ─── Footer ─── */
 .site-footer {
-  border-top: 1px solid var(--line-strong);
-  padding-block: 1.5rem;
+  background: var(--bg);
+  padding-block: 2.5rem;
 }
 
 .footer-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
+  gap: 1rem;
   align-items: center;
   justify-content: space-between;
-  color: var(--ink-faint);
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--text-muted);
   font-size: 0.875rem;
 }
 
-.footer-row a {
-  color: var(--ink-soft);
-  text-decoration: none;
-  margin-inline-start: 1rem;
+.footer-brand .logo img {
+  height: 1.1rem;
 }
 
-.footer-row a:hover {
-  color: var(--ink);
-  text-decoration: underline;
+.footer-nav a {
+  color: var(--text-muted);
+  text-decoration: none;
+  margin-inline-start: 1.25rem;
+  font-size: 0.875rem;
+}
+
+.footer-nav a:hover {
+  color: var(--text);
+}
+
+/* ─── Legal pages (light band for readability) ─── */
+.legal {
+  background: var(--paper);
+  color: var(--paper-text);
+  padding-block: 4rem 5rem;
+}
+
+.legal h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.5rem;
+}
+
+.legal .legal-updated {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--paper-muted);
+  margin-bottom: 2.5rem;
+}
+
+.legal h2 {
+  font-size: 1.25rem;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.legal p, .legal ul {
+  max-width: 70ch;
+  line-height: 1.65;
+  color: var(--paper-text);
+}
+
+.legal ul {
+  padding-inline-start: 1.25rem;
+  margin-block: 0.5rem;
+}
+
+.legal a {
+  color: var(--navy-800);
+}
+
+/* Placeholders — owner data to be filled in before relying on these pages */
+.legal [data-placeholder] {
+  background: rgba(245, 158, 11, 0.25);
+  padding: 0 0.25rem;
+  border-radius: 3px;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 40rem) {
+  .stat {
+    border-inline-start: none;
+    border-top: 1px solid var(--line);
+    padding-block: 1.5rem;
+  }
+
+  .stat:first-child {
+    border-top: none;
+  }
+
+  .header-nav {
+    gap: 1rem;
+  }
+
+  .header-nav a.nav-link {
+    display: none;
+  }
 }

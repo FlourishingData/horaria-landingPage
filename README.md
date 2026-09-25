@@ -20,15 +20,19 @@ reduzierter, austauschbarer Einstiegspunkt.
 
 ```
 ├── index.html          # Startseite (CSP als Meta-Tag, deklaratives HTML)
+├── impressum.html      # Anbieterkennzeichnung — Platzhalter ausfüllen!
+├── datenschutz.html    # Datenschutzerklärung — Platzhalter ausfüllen!
 ├── 404.html            # GitHub Pages zeigt diese Datei automatisch bei 404
 ├── CNAME               # Custom Domain (horarium.ch)
 ├── .nojekyll           # Jekyll-Verarbeitung überspringen
+├── AGENTS.md           # Regeln: keine internen horaria-Details veröffentlichen
 ├── css/
-│   └── styles.css      # Design-Tokens aus dem "Drafting Table"-Stil der App
+│   └── styles.css      # Dunkler Corporate-Look in Logo-Farben (Navy/Amber)
 ├── js/
 │   └── main.js         # APP_URL (Ziel des Login-Buttons), Footer-Jahr
 └── assets/
-    └── images/         # Produktbilder als WebP, responsive (srcset), lazy
+    ├── images/         # Logo (SVG) + Produktbilder (WebP, srcset, lazy)
+    └── fonts/          # Self-hosted: Space Grotesk + IBM Plex Mono (OFL)
 ```
 
 ## Konfiguration
@@ -69,7 +73,13 @@ python -m http.server 8000   # http://localhost:8000
 - **Keine sensiblen Inhalte** — die Seite ist öffentlich und hat keinen
   Zugriffsschutz (GitHub-Pages-Einschränkung, arc42 §4.5)
 - **Bilder:** WebP, responsive per `srcset`, `loading="lazy"` → Seitengröße < 1 MB
-- **CSP** als Meta-Tag in jeder HTML-Datei pflegen; bei Self-Hosting der Fonts
-  die `fonts.googleapis.com`/`fonts.gstatic.com`-Einträge entfernen
+- **CSP** als Meta-Tag in jeder HTML-Datei pflegen. Alle Assets (inkl. Fonts)
+  sind self-hosted — CSP bleibt streng (`default-src 'self'`); externe
+  Ressourcen nur nach dokumentierter Notwendigkeit
+- **Rechtliches:** `impressum.html` und `datenschutz.html` enthalten
+  `[Platzhalter]` (markiert mit `data-placeholder`) — vor Livegang durch echte
+  Angaben ersetzen und Attribut entfernen
+- **Keine internen Details** aus dem Haupt-Repo veröffentlichen — siehe
+  `AGENTS.md` (öffentliche Seite, proprietäres Produkt-Repo)
 - **Commit-Messages:** [Conventional Commits](https://www.conventionalcommits.org)
   (`feat:`, `fix:`, `docs:`, …) — gleiche Konvention wie im Haupt-Repo
