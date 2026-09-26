@@ -16,13 +16,21 @@ may be copied into this repository or onto this website.**
   publishing/frozen periods, GTFS import/export, multi-tenancy)
 - Brand assets (logo, name) and the "Drafting Table"/logo color palette
 - Roadmap statements only as "in Planung"
+- Marketing-level infrastructure claims (owner decision, Sept 2026):
+  scale-to-zero, cloud-agnostic deployment, operation in the customer's own
+  Kubernetes cluster, and cost-effective positioning ("kosteneffiziente
+  Alternative zu etablierten Planungssystemen") — generic marketing copy,
+  no stack details
+- Pricing page (`preise.html`): package tiers with "Preis auf Anfrage" —
+  no concrete figures until the owner provides them
 
 ### Forbidden — never publish from the horaria repo
 
-- Architecture and infrastructure internals: Kubernetes, Knative, scale-to-zero,
-  service names, Kourier/NATS/PostgreSQL/Valkey, observability, CI/CD, GitOps
-- Cost figures, cost baselines, licensing internals (BYOC/SaaS mechanics,
-  entitlement claims, ADR content)
+- Architecture and infrastructure internals beyond the approved marketing
+  claims above: Knative, internal service names, Kourier/NATS/PostgreSQL/Valkey,
+  observability, CI/CD, GitOps
+- Cost figures, cost baselines, licensing internals (entitlement claims, ADR
+  content) — the pricing page stays at "auf Anfrage" until the owner sets numbers
 - `docs/handoffs`, `docs/data-model`, `docs/microservice-model`,
   `docs/licensing` — internal documents, do not quote
 - IdP choice, security concepts, messaging/persistence details
@@ -51,4 +59,7 @@ Same convention as the main horaria repo:
   (`default-src 'self'`); if a resource must be external, document why
 - Total page weight target: < 1 MB — images as WebP with `srcset` +
   `loading="lazy"` in `assets/images/`
-- Keep the header/footer shell identical on every page
+- Keep the header/footer shell identical on every page (nav: Funktionen,
+  Preise, language switcher, Login)
+- Language switcher in the header: DE active; EN/FR shown as "in Vorbereitung"
+  until translations exist — don't create /en/ or /fr/ pages until then

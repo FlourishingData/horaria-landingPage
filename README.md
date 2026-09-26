@@ -20,6 +20,7 @@ reduzierter, austauschbarer Einstiegspunkt.
 
 ```
 ├── index.html          # Startseite (CSP als Meta-Tag, deklaratives HTML)
+├── preise.html         # Preise: Pakete mit "auf Anfrage" — keine Zahlen ohne Freigabe
 ├── impressum.html      # Anbieterkennzeichnung — Platzhalter ausfüllen!
 ├── datenschutz.html    # Datenschutzerklärung — Platzhalter ausfüllen!
 ├── 404.html            # GitHub Pages zeigt diese Datei automatisch bei 404
@@ -79,6 +80,8 @@ python -m http.server 8000   # http://localhost:8000
 - **Rechtliches:** `impressum.html` und `datenschutz.html` enthalten
   `[Platzhalter]` (markiert mit `data-placeholder`) — vor Livegang durch echte
   Angaben ersetzen und Attribut entfernen
+- **Sprachen:** Deutsch ist aktiv; EN/FR erscheinen im Sprachmenü als
+  «in Vorbereitung», bis Übersetzungen existieren
 - **Keine internen Details** aus dem Haupt-Repo veröffentlichen — siehe
   `AGENTS.md` (öffentliche Seite, proprietäres Produkt-Repo)
 - **Commit-Messages:** [Conventional Commits](https://www.conventionalcommits.org)
