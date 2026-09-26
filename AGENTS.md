@@ -63,6 +63,10 @@ Same convention as the main horaria repo:
   (`default-src 'self'`); if a resource must be external, document why
 - Total page weight target: < 1 MB — images as WebP with `srcset` +
   `loading="lazy"` in `assets/images/`
+- The modules are licensed individually and branded `horaria.plan`
+  (Fahrplanplanung, verfügbar), `horaria.vehicle` (Umlaufplanung, in Planung),
+  and `horaria.crew` (Dienstplanung, in Planung) — refer to them by these
+  names everywhere
 - Keep the header/footer shell identical on every page (nav: Funktionen,
   Preise, language switcher, Registrieren, Login)
 - Language switcher in the header: compact globe icon + DE (active) with EN

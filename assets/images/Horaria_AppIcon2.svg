@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <title>Horaria — App Icon</title>
+  <desc>H aus Schienen, Uhr auf der Querstrebe</desc>
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1C4066"/>
+      <stop offset="1" stop-color="#0F2438"/>
+    </linearGradient>
+    <linearGradient id="amberGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FBBF24"/>
+      <stop offset="1" stop-color="#F59E0B"/>
+    </linearGradient>
+    <linearGradient id="steelGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#64748B"/>
+      <stop offset="0.45" stop-color="#CBD5E1"/>
+      <stop offset="1" stop-color="#64748B"/>
+    </linearGradient>
+    <linearGradient id="steelGradF" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#CBD5E1"/>
+      <stop offset="1" stop-color="#64748B"/>
+    </linearGradient>
+    <radialGradient id="faceGrad" cx="0.5" cy="0.42" r="0.75">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#E9EFF6"/>
+    </radialGradient>
+  </defs>
+  <rect x="10" y="10" width="492" height="492" rx="112" fill="url(#bgGrad)"/>
+  <g>
+    <rect x="145.8" y="145.3235294117647" width="220.5" height="11" rx="5" fill="#64748B"/><rect x="145.8" y="345.3235294117647" width="220.5" height="11" rx="5" fill="#64748B"/>
+    <rect x="166.76" y="109.00" width="18" height="294.00" fill="url(#steelGrad)"/><rect x="183.76" y="98.00" width="6" height="316.00" fill="#E2E8F0"/><rect x="155.76" y="98.00" width="40" height="22" rx="4" fill="url(#steelGradF)"/><rect x="155.76" y="392.00" width="40" height="22" rx="4" fill="url(#steelGradF)"/>
+    <rect x="327.24" y="109.00" width="18" height="294.00" fill="url(#steelGrad)"/><rect x="322.24" y="98.00" width="6" height="316.00" fill="#E2E8F0"/><rect x="316.24" y="98.00" width="40" height="22" rx="4" fill="url(#steelGradF)"/><rect x="316.24" y="392.00" width="40" height="22" rx="4" fill="url(#steelGradF)"/>
+    <g fill="url(#amberGrad)"><path d="M675 0H524V308H241V0H90V714H241V434H524V714H675Z" transform="translate(114.57,388.00) scale(0.36975,-0.36975)"/></g>
+    <circle cx="256" cy="250.8" r="66" fill="url(#faceGrad)" stroke="#0B1220" stroke-width="10"/>
+    <line x1="256.0" y1="213.8" x2="256.0" y2="200.8" stroke="#16324F" stroke-width="5" stroke-linecap="round"/><line x1="277.0" y1="214.5" x2="281.0" y2="207.5" stroke="#16324F" stroke-width="3" stroke-linecap="round"/><line x1="292.4" y1="229.8" x2="299.3" y2="225.8" stroke="#16324F" stroke-width="3" stroke-linecap="round"/><line x1="293.0" y1="250.8" x2="306.0" y2="250.8" stroke="#16324F" stroke-width="5" stroke-linecap="round"/><line x1="292.4" y1="271.8" x2="299.3" y2="275.8" stroke="#16324F" stroke-width="3" stroke-linecap="round"/><line x1="277.0" y1="287.2" x2="281.0" y2="294.1" stroke="#16324F" stroke-width="3" stroke-linecap="round"/><line x1="256.0" y1="287.8" x2="256.0" y2="300.8" stroke="#16324F" stroke-width="5" stroke-linecap="round"/><line x1="235.0" y1="287.2" x2="231.0" y2="294.1" stroke="#16324F" stroke-width="3" stroke-linecap="round"/><line x1="219.6" y1="271.8" x2="212.7" y2="275.8" stroke="#16324F" stroke-width="3" stroke-linecap="round"/><line x1="219.0" y1="250.8" x2="206.0" y2="250.8" stroke="#16324F" stroke-width="5" stroke-linecap="round"/><line x1="219.6" y1="229.8" x2="212.7" y2="225.8" stroke="#16324F" stroke-width="3" stroke-linecap="round"/><line x1="235.0" y1="214.5" x2="231.0" y2="207.5" stroke="#16324F" stroke-width="3" stroke-linecap="round"/>
+    <line x1="256" y1="250.8" x2="234.7" y2="235.9" stroke="#16324F" stroke-width="11" stroke-linecap="round"/>
+    <line x1="256" y1="250.8" x2="290.6" y2="230.8" stroke="#16324F" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="256" cy="250.8" r="7" fill="#F59E0B"/>
+  </g>
+</svg>
