@@ -48,6 +48,10 @@ Same convention as the main horaria repo:
 
 - `feat` → new content/section, `fix` → correction, `docs`, `chore` → no release
 - Reasonable scopes here: `site`, `legal`, `styles`, `content`
+- Releases are automated: release-please (GitHub Action, `.github/workflows/release.yml`)
+  parses these commits and opens release PRs on `main`. Never tag or bump
+  versions manually; the version lives in `.release-please-manifest.json`,
+  the changelog in `CHANGELOG.md`.
 
 ## Site conventions
 
