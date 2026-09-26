@@ -544,6 +544,12 @@ body {
   color: var(--navy-800);
 }
 
+.cta-band a:not(.btn) {
+  color: var(--bg);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
 /* Placeholders — owner data to be filled in before relying on these pages */
 [data-placeholder] {
   background: rgba(245, 158, 11, 0.25);
