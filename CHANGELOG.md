@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.0](https://github.com/FlourishingData/horaria-landingPage/compare/v0.2.0...v0.3.0) (2026-09-26)
+
+
+### Features
+
+* **site:** brand modules as horaria.plan/vehicle/crew, add app-icon favicon, enlarge logo wordmark ([2300241](https://github.com/FlourishingData/horaria-landingPage/commit/23002416b8574610001d865b7f1a1ae1dc43833b))
+
 ## [0.2.0](https://github.com/FlourishingData/horaria-landingPage/compare/v0.1.0...v0.2.0) (2026-09-26)
 
 
