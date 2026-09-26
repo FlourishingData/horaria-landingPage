@@ -22,31 +22,24 @@
       <a class="logo" href="/" aria-label="horaria — Startseite">
         <img src="assets/images/Horaria_Logo.svg" alt="horaria" width="118" height="40">
       </a>
+      <span class="header-divider" aria-hidden="true"></span>
       <nav class="header-nav">
         <a class="nav-link" href="#features">Funktionen</a>
         <a class="nav-link" href="/preise.html">Preise</a>
-        <details class="lang-switch">
-          <summary>
-            DE<span class="lang-caret" aria-hidden="true"></span>
-            <span class="visually-hidden">Sprache wählen</span>
-          </summary>
-          <ul class="lang-menu">
-            <li><span class="lang-option is-active" aria-current="true">Deutsch</span></li>
-            <li>
-              <span class="lang-option is-soon" aria-disabled="true">
-                English<span class="lang-note">in Vorbereitung</span>
-              </span>
-            </li>
-            <li>
-              <span class="lang-option is-soon" aria-disabled="true">
-                Français<span class="lang-note">en préparation</span>
-              </span>
-            </li>
-          </ul>
-        </details>
+      </nav>
+      <div class="header-actions">
+        <div class="lang-switcher" role="group" aria-label="Sprache / Language">
+          <svg class="lang-icon" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+            <circle cx="8" cy="8" r="6.4"/>
+            <ellipse cx="8" cy="8" rx="2.9" ry="6.4"/>
+            <path d="M1.6 8h12.8"/>
+          </svg>
+          <span class="lang-current" aria-current="true">DE</span>
+          <span class="lang-soon" title="English — in preparation">EN</span>
+        </div>
         <a class="btn btn-outline js-signup-link" href="https://app.horarium.ch">Registrieren</a>
         <a class="btn btn-primary js-login-link" href="https://app.horarium.ch">Login</a>
-      </nav>
+      </div>
     </div>
   </header>
 

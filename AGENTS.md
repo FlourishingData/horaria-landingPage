@@ -61,5 +61,6 @@ Same convention as the main horaria repo:
   `loading="lazy"` in `assets/images/`
 - Keep the header/footer shell identical on every page (nav: Funktionen,
   Preise, language switcher, Registrieren, Login)
-- Language switcher in the header: DE active; EN/FR shown as "in Vorbereitung"
-  until translations exist — don't create /en/ or /fr/ pages until then
+- Language switcher in the header: compact globe icon + DE (active) with EN
+  greyed as "in preparation" — no dropdown; don't create /en/ or /fr/ pages
+  until translations exist
