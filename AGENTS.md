@@ -60,6 +60,6 @@ Same convention as the main horaria repo:
 - Total page weight target: < 1 MB — images as WebP with `srcset` +
   `loading="lazy"` in `assets/images/`
 - Keep the header/footer shell identical on every page (nav: Funktionen,
-  Preise, language switcher, Login)
+  Preise, language switcher, Registrieren, Login)
 - Language switcher in the header: DE active; EN/FR shown as "in Vorbereitung"
   until translations exist — don't create /en/ or /fr/ pages until then

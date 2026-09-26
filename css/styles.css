@@ -115,7 +115,7 @@ body {
 }
 
 .logo img {
-  height: 1.5rem;
+  height: 2rem;
   width: auto;
   display: block;
 }
@@ -138,6 +138,11 @@ body {
 
 .header-nav a.nav-link.is-active {
   color: var(--amber);
+}
+
+.header-nav .btn {
+  padding: 0.45rem 1rem;
+  font-size: 0.9375rem;
 }
 
 /* ─── Language switcher (DE active; EN/FR in preparation) ─── */

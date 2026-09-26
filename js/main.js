@@ -9,8 +9,18 @@
  */
 const APP_URL = 'https://app.horarium.ch';
 
+/**
+ * SaaS self-service signup ("Registrieren") lives on the same app domain;
+ * adjust the path once the registration route is finalized.
+ */
+const SIGNUP_URL = 'https://app.horarium.ch/register';
+
 document.querySelectorAll('.js-login-link').forEach((link) => {
   link.setAttribute('href', APP_URL);
+});
+
+document.querySelectorAll('.js-signup-link').forEach((link) => {
+  link.setAttribute('href', SIGNUP_URL);
 });
 
 const yearEl = document.getElementById('current-year');
