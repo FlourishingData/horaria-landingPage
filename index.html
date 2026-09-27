@@ -11,6 +11,9 @@
 
   <title>horaria — Die Planungsplattform für öffentlichen Verkehr</title>
   <meta name="description" content="horaria deckt die Planungskette öffentlicher Verkehrsangebote ab: horaria.plan heute, horaria.vehicle und horaria.crew als nächste Schritte. Im Browser, ohne Installation.">
+  <link rel="alternate" hreflang="de" href="/">
+  <link rel="alternate" hreflang="en" href="/en/">
+  <link rel="alternate" hreflang="x-default" href="/">
 
   <link rel="icon" href="assets/images/Horaria_AppIcon2.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/styles.css">
@@ -28,15 +31,24 @@
         <a class="nav-link" href="/preise.html">Preise</a>
       </nav>
       <div class="header-actions">
-        <div class="lang-switcher" role="group" aria-label="Sprache / Language">
-          <svg class="lang-icon" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
-            <circle cx="8" cy="8" r="6.4"/>
-            <ellipse cx="8" cy="8" rx="2.9" ry="6.4"/>
-            <path d="M1.6 8h12.8"/>
-          </svg>
-          <span class="lang-current" aria-current="true">DE</span>
-          <span class="lang-soon" title="English — in preparation">EN</span>
-        </div>
+        <details class="lang-switcher">
+          <summary class="lang-toggle" aria-label="Sprache wählen / Choose language">
+            <svg class="lang-icon" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+              <circle cx="8" cy="8" r="6.4"/>
+              <ellipse cx="8" cy="8" rx="2.9" ry="6.4"/>
+              <path d="M1.6 8h12.8"/>
+            </svg>
+            <span class="lang-current">DE</span>
+            <svg class="lang-caret" viewBox="0 0 10 6" width="10" height="6" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+              <path d="M1.5 1l3.5 3.5L8.5 1"/>
+            </svg>
+          </summary>
+          <ul class="lang-menu">
+            <li><a href="/" hreflang="de" lang="de" aria-current="true">Deutsch</a></li>
+            <li><a href="/en/" hreflang="en" lang="en">English</a></li>
+            <li><span class="lang-soon" title="Französisch — in Vorbereitung" lang="fr">Français</span></li>
+          </ul>
+        </details>
         <a class="btn btn-outline js-signup-link" href="https://app.horarium.ch">Registrieren</a>
         <a class="btn btn-primary js-login-link" href="https://app.horarium.ch">Login</a>
       </div>

@@ -55,7 +55,8 @@ Same convention as the main horaria repo:
 
 ## Site conventions
 
-- Copy is German; `<html lang="de">` on every page
+- Copy is German; `<html lang="de">` on every German page (`lang="en"` on
+  the English pages under `/en/`)
 - Owner/company data is unknown — use `[Platzhalter]` with a `data-placeholder`
   attribute in legal pages; never invent real names, addresses, or numbers
 - Fonts are self-hosted in `assets/fonts/` (OFL-licensed) — do not add CDN
@@ -69,6 +70,10 @@ Same convention as the main horaria repo:
   names everywhere
 - Keep the header/footer shell identical on every page (nav: Funktionen,
   Preise, language switcher, Registrieren, Login)
-- Language switcher in the header: compact globe icon + DE (active) with EN
-  greyed as "in preparation" — no dropdown; don't create /en/ or /fr/ pages
-  until translations exist
+- Language switcher in the header: borderless `<details>` toggle (globe icon +
+  current language code + caret) opening a dropdown with Deutsch / English /
+  Français greyed as "in preparation". English pages live under `/en/`
+  (`en/index.html`, `en/preise.html`) with root-absolute asset paths and
+  `hreflang` alternates on both language versions; legal pages (Impressum,
+  Datenschutz) stay German-only, so the EN menu entry there links to `/en/`.
+  Don't create `/fr/` pages until a French translation exists

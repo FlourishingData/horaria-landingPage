@@ -27,3 +27,22 @@ const yearEl = document.getElementById('current-year');
 if (yearEl) {
   yearEl.textContent = String(new Date().getFullYear());
 }
+
+/**
+ * Language switcher (<details>-based, works without JS).
+ * JS enhancement: close on outside click and on Escape.
+ */
+document.querySelectorAll('.lang-switcher').forEach((switcher) => {
+  document.addEventListener('click', (event) => {
+    if (switcher.open && !switcher.contains(event.target)) {
+      switcher.open = false;
+    }
+  });
+
+  switcher.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && switcher.open) {
+      switcher.open = false;
+      switcher.querySelector('summary')?.focus();
+    }
+  });
+});

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Security headers (arc42 §4.4). All assets self-hosted — CSP stays strict.
+       frame-ancestors/HSTS cannot be set via meta; HTTPS is enforced at the host. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; connect-src 'self'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
+  <title>horaria — The planning platform for public transport</title>
+  <meta name="description" content="horaria covers the planning chain of public transport services: horaria.plan today, horaria.vehicle and horaria.crew as next steps. In the browser, no installation.">
+  <link rel="alternate" hreflang="de" href="/">
+  <link rel="alternate" hreflang="en" href="/en/">
+  <link rel="alternate" hreflang="x-default" href="/">
+
+  <link rel="icon" href="/assets/images/Horaria_AppIcon2.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="/js/main.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="logo" href="/en/" aria-label="horaria — Home">
+        <img src="/assets/images/Horaria_Logo.svg" alt="horaria" width="118" height="40">
+      </a>
+      <span class="header-divider" aria-hidden="true"></span>
+      <nav class="header-nav">
+        <a class="nav-link" href="#features">Features</a>
+        <a class="nav-link" href="/en/preise.html">Pricing</a>
+      </nav>
+      <div class="header-actions">
+        <details class="lang-switcher">
+          <summary class="lang-toggle" aria-label="Choose language / Sprache wählen">
+            <svg class="lang-icon" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+              <circle cx="8" cy="8" r="6.4"/>
+              <ellipse cx="8" cy="8" rx="2.9" ry="6.4"/>
+              <path d="M1.6 8h12.8"/>
+            </svg>
+            <span class="lang-current">EN</span>
+            <svg class="lang-caret" viewBox="0 0 10 6" width="10" height="6" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+              <path d="M1.5 1l3.5 3.5L8.5 1"/>
+            </svg>
+          </summary>
+          <ul class="lang-menu">
+            <li><a href="/" hreflang="de" lang="de">Deutsch</a></li>
+            <li><a href="/en/" hreflang="en" lang="en" aria-current="true">English</a></li>
+            <li><span class="lang-soon" title="French — in preparation" lang="fr">Français</span></li>
+          </ul>
+        </details>
+        <a class="btn btn-outline js-signup-link" href="https://app.horarium.ch">Register</a>
+        <a class="btn btn-primary js-login-link" href="https://app.horarium.ch">Log in</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <p class="eyebrow">Public-transport planning platform</p>
+        <h1>The planning platform for <span class="accent">public transport</span>.</h1>
+        <p class="lede">
+          From timetable to duty planning: horaria brings the entire
+          planning chain together in one interface — in the browser, with
+          your team, in real time.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-primary btn-lg js-login-link" href="https://app.horarium.ch">Get started now</a>
+          <a class="btn btn-outline btn-lg" href="#features">View features</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats" aria-label="Key figures">
+      <div class="container stats-grid">
+        <div class="stat">
+          <span class="stat-value">3</span>
+          <span class="stat-label">Planning stages, one platform</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">&lt; 5 min.</span>
+          <span class="stat-label">To your first timetable</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">100 %</span>
+          <span class="stat-label">In the browser — no installation</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">GTFS</span>
+          <span class="stat-label">Import &amp; export included</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="section">
+      <div class="container">
+        <p class="eyebrow">The planning chain</p>
+        <h2>Every stage builds on the previous one.</h2>
+        <p class="section-intro">
+          A valid timetable feeds vehicle scheduling; vehicle schedules feed
+          duty planning. From an empty project to a fully equipped
+          operation — without switching tools.
+        </p>
+        <div class="card-grid">
+          <article class="card">
+            <p class="card-index">horaria.plan</p>
+            <h3>Timetable planning</h3>
+            <p>
+              Lines, routes and trips with an interface that explains
+              itself. Together with your team, in real time — with import
+              and export of open formats including GTFS.
+            </p>
+            <p class="badge">Available</p>
+          </article>
+          <article class="card">
+            <p class="card-index">horaria.vehicle</p>
+            <h3>Vehicle scheduling</h3>
+            <p>
+              Combine trips into vehicle blocks and duties, use your
+              vehicles optimally and see how many vehicles a timetable
+              really needs.
+            </p>
+            <p class="badge">Planned</p>
+          </article>
+          <article class="card">
+            <p class="card-index">horaria.crew</p>
+            <h3>Duty planning</h3>
+            <p>
+              Plan duties, shifts and rosters based on vehicle schedules —
+              down to each individual driver.
+            </p>
+            <p class="badge">Planned</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <p class="eyebrow">Why horaria</p>
+        <h2>Built for planners.</h2>
+        <ul class="feature-list">
+          <li>
+            <h3>Real-time collaboration</h3>
+            <p>Multiple planners work on the same timetable — changes are immediately visible to everyone.</p>
+          </li>
+          <li>
+            <h3>Publish &amp; freeze</h3>
+            <p>Planning periods are published at a fixed state and are immutable afterwards — corrections run in a new period.</p>
+          </li>
+          <li>
+            <h3>Open formats</h3>
+            <p>GTFS import and export are part of the core. Data sovereignty stays with you.</p>
+          </li>
+          <li>
+            <h3>For teams &amp; agencies</h3>
+            <p>Multiple companies in one installation — each organisation with its own data.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <p class="eyebrow">Technology &amp; operations</p>
+        <h2>Cloud-native, vendor-independent, cost-effective.</h2>
+        <p class="section-intro">
+          horaria runs on modern cloud infrastructure — scaling with your
+          operation and without idle costs. And it runs where you want it:
+          hosted by us or in your own infrastructure.
+        </p>
+        <ul class="feature-list">
+          <li>
+            <h3>Scale-to-Zero</h3>
+            <p>Without usage, the platform scales to zero — you only pay for what you actually use, not for idle time.</p>
+          </li>
+          <li>
+            <h3>Cloud-agnostic</h3>
+            <p>AWS, Azure, Google Cloud or another provider: horaria stays replaceable — no vendor lock-in.</p>
+          </li>
+          <li>
+            <h3>Your own Kubernetes cluster</h3>
+            <p>For maximum data sovereignty, horaria can be integrated into your own Kubernetes infrastructure — on-premises or with your cloud provider.</p>
+          </li>
+          <li>
+            <h3>A cost-effective alternative</h3>
+            <p>Modern architecture without enterprise overhead: the predictable, affordable alternative to established planning systems.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="container">
+        <p class="eyebrow">Ready?</p>
+        <h2>Your next timetable starts here.</h2>
+        <p>Sign up and get started right away — no installation, no training.</p>
+        <a class="btn btn-primary btn-lg js-login-link" href="https://app.horarium.ch">Go to the app</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <p class="footer-brand">
+        <a class="logo" href="/en/" aria-label="horaria — Home">
+          <img src="/assets/images/Horaria_Logo.svg" alt="horaria">
+        </a>
+        <span>&copy; <span id="current-year">2026</span> horaria</span>
+      </p>
+      <nav class="footer-nav">
+        <a href="/en/preise.html">Pricing</a>
+        <a href="mailto:contact@horaria.ch">Contact</a>
+        <a href="/impressum.html">Imprint</a>
+        <a href="/datenschutz.html">Privacy</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
