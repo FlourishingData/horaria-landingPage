@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.0](https://github.com/FlourishingData/horaria-landingPage/compare/v0.4.0...v0.5.0) (2026-09-27)
+
+
+### Features
+
+* **site:** restructure pricing around four modules and journey packages ([#5](https://github.com/FlourishingData/horaria-landingPage/issues/5)) ([f53cc31](https://github.com/FlourishingData/horaria-landingPage/commit/f53cc31e526f5c8a2bf4ad2b4d6baebc5ffff33d))
+
 ## [0.4.0](https://github.com/FlourishingData/horaria-landingPage/compare/v0.3.0...v0.4.0) (2026-09-27)
 
 
