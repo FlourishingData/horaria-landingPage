@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.0](https://github.com/FlourishingData/horaria-landingPage/compare/v0.5.0...v0.6.0) (2026-09-27)
+
+
+### Features
+
+* **site:** add preview notice popup (site under construction) ([#7](https://github.com/FlourishingData/horaria-landingPage/issues/7)) ([c3e64a7](https://github.com/FlourishingData/horaria-landingPage/commit/c3e64a76a52d12008d30d050c55494b2f0d3b588))
+
 ## [0.5.0](https://github.com/FlourishingData/horaria-landingPage/compare/v0.4.0...v0.5.0) (2026-09-27)
 
 
