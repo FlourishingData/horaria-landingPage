@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.0](https://github.com/FlourishingData/horaria-landingPage/compare/v0.3.0...v0.4.0) (2026-09-27)
+
+
+### Features
+
+* **site:** add language dropdown and English pages under /en/ ([1db7034](https://github.com/FlourishingData/horaria-landingPage/commit/1db7034f172512e753bc04a1c288ceff235a1648))
+
 ## [0.3.0](https://github.com/FlourishingData/horaria-landingPage/compare/v0.2.0...v0.3.0) (2026-09-26)
 
 
