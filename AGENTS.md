@@ -66,8 +66,9 @@ Same convention as the main horaria repo:
   `loading="lazy"` in `assets/images/`
 - The modules are licensed individually and branded `horaria.plan`
   (Fahrplanplanung, verfügbar), `horaria.vehicle` (Umlaufplanung, in Planung),
-  and `horaria.crew` (Dienstplanung, in Planung) — refer to them by these
-  names everywhere
+  `horaria.crew` (Dienstplanung, in Planung) and `horaria.analysis`
+  (Auswertung & Reporting, in Planung) — refer to them by these names
+  everywhere
 - Keep the header/footer shell identical on every page (nav: Funktionen,
   Preise, language switcher, Registrieren, Login)
 - Language switcher in the header: borderless `<details>` toggle (globe icon +
