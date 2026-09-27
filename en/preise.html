@@ -16,6 +16,17 @@
   <script src="/js/main.js" defer></script>
 </head>
 <body>
+  <dialog class="notice" id="preview-notice" aria-labelledby="notice-title" open>
+    <p class="eyebrow">Note</p>
+    <h2 id="notice-title">horaria is not live yet.</h2>
+    <p>
+      This website is still under construction. The platform is in
+      development — features, modules and pricing may change before launch.
+    </p>
+    <form method="dialog">
+      <button class="btn btn-primary" value="dismiss">Got it</button>
+    </form>
+  </dialog>
   <header class="site-header">
     <div class="container header-row">
       <a class="logo" href="/en/" aria-label="horaria — Home">

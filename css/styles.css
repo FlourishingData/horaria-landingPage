@@ -676,6 +676,41 @@ body {
   border: 0;
 }
 
+/* ─── Preview notice (dialog) ─── */
+dialog.notice {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  max-width: 26rem;
+  padding: 2rem 2rem 1.75rem;
+  background: var(--bg-raised);
+  color: var(--text);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.45);
+  text-align: center;
+}
+
+dialog.notice::backdrop {
+  background: rgba(4, 10, 17, 0.6);
+}
+
+dialog.notice h2 {
+  margin-top: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+dialog.notice p {
+  margin-top: 0.75rem;
+  color: var(--text-muted);
+}
+
+dialog.notice form {
+  margin-top: 1.5rem;
+}
+
 /* ─── Responsive ─── */
 @media (max-width: 40rem) {
   .stat {

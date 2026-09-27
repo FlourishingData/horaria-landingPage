@@ -46,3 +46,35 @@ document.querySelectorAll('.lang-switcher').forEach((switcher) => {
     }
   });
 });
+
+/**
+ * Preview notice (<dialog>): shown on every page until dismissed.
+ * The `open` attribute in the markup keeps it visible without JS
+ * (a <form method="dialog"> closes it natively); with JS it opens as a
+ * modal and the dismissal is persisted in localStorage.
+ */
+const notice = document.getElementById('preview-notice');
+if (notice) {
+  const DISMISS_KEY = 'horaria-notice-dismissed';
+  let dismissed = false;
+  try {
+    dismissed = localStorage.getItem(DISMISS_KEY) === '1';
+  } catch {
+    /* storage unavailable — keep showing the notice */
+  }
+  notice.removeAttribute('open');
+  if (!dismissed) {
+    if (typeof notice.showModal === 'function') {
+      notice.showModal();
+    } else {
+      notice.setAttribute('open', '');
+    }
+  }
+  notice.addEventListener('close', () => {
+    try {
+      localStorage.setItem(DISMISS_KEY, '1');
+    } catch {
+      /* dismissal just is not persisted */
+    }
+  });
+}
