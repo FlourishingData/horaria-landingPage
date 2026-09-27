@@ -70,7 +70,9 @@ Same convention as the main horaria repo:
   (Auswertung & Reporting, in Planung) — refer to them by these names
   everywhere
 - Keep the header/footer shell identical on every page (nav: Funktionen,
-  Preise, language switcher, Registrieren, Login)
+  Preise, language switcher, Registrieren, Login) — on mobile (≤40rem) the
+  nav links and auth buttons collapse into a hamburger menu (`.nav-switcher`,
+  a `<details>` dropdown like the language switcher)
 - Language switcher in the header: borderless `<details>` toggle (globe icon +
   current language code + caret) opening a dropdown with Deutsch / English /
   Français greyed as "in preparation". English pages live under `/en/`

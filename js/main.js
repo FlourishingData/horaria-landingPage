@@ -29,10 +29,10 @@ if (yearEl) {
 }
 
 /**
- * Language switcher (<details>-based, works without JS).
- * JS enhancement: close on outside click and on Escape.
+ * Dropdown widgets (<details>-based, work without JS): language switcher
+ * and mobile nav menu. JS enhancement: close on outside click and Escape.
  */
-document.querySelectorAll('.lang-switcher').forEach((switcher) => {
+document.querySelectorAll('.lang-switcher, .nav-switcher').forEach((switcher) => {
   document.addEventListener('click', (event) => {
     if (switcher.open && !switcher.contains(event.target)) {
       switcher.open = false;

@@ -206,6 +206,11 @@ body {
   transform: rotate(180deg);
 }
 
+/* Mobile nav switcher (hamburger; hidden on desktop, enabled in the media query) */
+.nav-switcher {
+  display: none;
+}
+
 .lang-menu {
   position: absolute;
   top: calc(100% + 0.5rem);
@@ -727,11 +732,8 @@ dialog.notice form {
     gap: 0.75rem;
   }
 
+  .header-divider,
   .header-nav {
-    gap: 1rem;
-  }
-
-  .header-nav a.nav-link {
     display: none;
   }
 
@@ -739,12 +741,96 @@ dialog.notice form {
     gap: 0.5rem;
   }
 
-  .header-actions .btn {
-    padding: 0.4rem 0.8rem;
-    font-size: 0.875rem;
+  .header-actions > .btn {
+    display: none;
   }
 
   .lang-toggle {
     font-size: 0.875rem;
+  }
+
+  /* Mobile nav (hamburger) */
+  .nav-switcher {
+    display: block;
+    position: relative;
+    user-select: none;
+  }
+
+  .nav-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    color: var(--text-muted);
+    cursor: pointer;
+    list-style: none;
+    border-radius: var(--radius);
+  }
+
+  .nav-toggle::-webkit-details-marker {
+    display: none;
+  }
+
+  .nav-toggle:hover,
+  .nav-switcher[open] .nav-toggle {
+    color: var(--text);
+  }
+
+  .nav-toggle .icon-close {
+    display: none;
+  }
+
+  .nav-switcher[open] .icon-open {
+    display: none;
+  }
+
+  .nav-switcher[open] .icon-close {
+    display: block;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    inset-inline-end: 0;
+    z-index: 20;
+    min-width: 14rem;
+    list-style: none;
+    background: var(--bg-raised);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 0.35rem;
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.35);
+  }
+
+  .nav-menu a.nav-link {
+    display: block;
+    padding: 0.45rem 0.7rem;
+    border-radius: var(--radius);
+    font-size: 0.9375rem;
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  .nav-menu a.nav-link:hover {
+    background: var(--surface);
+  }
+
+  .nav-menu a.nav-link.is-active {
+    color: var(--amber);
+    font-weight: 700;
+  }
+
+  .nav-menu .nav-menu-actions {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.5rem 0.35rem 0.35rem;
+  }
+
+  .nav-menu .nav-menu-actions .btn {
+    flex: 1;
+    padding: 0.45rem 0.6rem;
+    font-size: 0.875rem;
+    text-align: center;
   }
 }
