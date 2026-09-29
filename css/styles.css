@@ -48,6 +48,7 @@
   --surface: #16324f;
   --text: #e9eff6;
   --text-muted: #96a8bf;
+  --text-faint: rgba(233, 239, 246, 0.55);
   --line: rgba(233, 239, 246, 0.14);
   --line-strong: rgba(233, 239, 246, 0.28);
 
@@ -461,6 +462,22 @@ body {
   margin-top: 0.5rem;
   color: var(--text-muted);
   font-size: 0.95rem;
+}
+
+/* Subdued closing note below a feature list — deliberately not a card */
+.feature-list + .section-footnote {
+  margin-top: 2rem;
+}
+
+.section-footnote {
+  max-width: 62ch;
+  font-size: 0.875rem;
+  color: var(--text-faint);
+}
+
+.section-footnote strong {
+  font-weight: 500;
+  color: var(--text-muted);
 }
 
 /* ─── CTA band ─── */
