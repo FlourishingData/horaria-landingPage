@@ -71,8 +71,9 @@ Same convention as the main horaria repo:
   everywhere
 - Keep the header/footer shell identical on every page (nav: Funktionen,
   Preise, language switcher, Registrieren, Login) — on mobile (≤40rem) the
-  nav links and auth buttons collapse into a hamburger menu (`.nav-switcher`,
-  a `<details>` dropdown like the language switcher)
+  nav links, auth buttons and language selection collapse into a hamburger
+  menu (`.nav-switcher`, a `<details>` dropdown like the language switcher);
+  inside it, languages open in a nested `.lang-sub` dropdown
 - Language switcher in the header: borderless `<details>` toggle (globe icon +
   current language code + caret) opening a dropdown with Deutsch / English /
   Français greyed as "in preparation". English pages live under `/en/`
