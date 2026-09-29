@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.7.0](https://github.com/FlourishingData/horaria-landingPage/compare/v0.6.0...v0.7.0) (2026-09-29)
+
+
+### Features
+
+* **site:** language selection inside mobile hamburger menu ([#11](https://github.com/FlourishingData/horaria-landingPage/issues/11)) ([16ea6b6](https://github.com/FlourishingData/horaria-landingPage/commit/16ea6b6d31686286a974e460f6823336deb852ac))
+
 ## [0.6.0](https://github.com/FlourishingData/horaria-landingPage/compare/v0.5.0...v0.6.0) (2026-09-27)
 
 
