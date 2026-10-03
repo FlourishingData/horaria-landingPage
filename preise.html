@@ -35,7 +35,20 @@
       </a>
       <span class="header-divider" aria-hidden="true"></span>
       <nav class="header-nav">
-        <a class="nav-link" href="/#features">Funktionen</a>
+        <details class="product-switcher">
+          <summary class="product-toggle" aria-haspopup="true">
+            Produkte
+            <svg class="lang-caret" viewBox="0 0 10 6" width="10" height="6" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+              <path d="M1.5 1l3.5 3.5L8.5 1"/>
+            </svg>
+          </summary>
+          <ul class="product-menu">
+            <li><a href="/produkte/plan.html">horaria.plan — Fahrplanplanung</a></li>
+            <li><a href="/produkte/vehicle.html">horaria.vehicle — Umlaufplanung</a></li>
+            <li><a href="/produkte/crew.html">horaria.crew — Dienstplanung</a></li>
+            <li><a href="/produkte/analysis.html">horaria.analysis — Auswertung &amp; Reporting</a></li>
+          </ul>
+        </details>
         <a class="nav-link is-active" href="/preise.html" aria-current="page">Preise</a>
       </nav>
       <div class="header-actions">
@@ -69,7 +82,22 @@
             </svg>
           </summary>
           <ul class="nav-menu">
-            <li><a class="nav-link" href="/#features">Funktionen</a></li>
+            <li class="nav-products">
+              <details class="product-sub">
+                <summary class="product-sub-toggle" aria-haspopup="true">
+                  Produkte
+                  <svg class="lang-caret" viewBox="0 0 10 6" width="10" height="6" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+                    <path d="M1.5 1l3.5 3.5L8.5 1"/>
+                  </svg>
+                </summary>
+                <ul class="product-sub-menu">
+                  <li><a href="/produkte/plan.html">horaria.plan — Fahrplanplanung</a></li>
+                  <li><a href="/produkte/vehicle.html">horaria.vehicle — Umlaufplanung</a></li>
+                  <li><a href="/produkte/crew.html">horaria.crew — Dienstplanung</a></li>
+                  <li><a href="/produkte/analysis.html">horaria.analysis — Auswertung &amp; Reporting</a></li>
+                </ul>
+              </details>
+            </li>
             <li><a class="nav-link is-active" href="/preise.html" aria-current="page">Preise</a></li>
             <li class="nav-lang">
               <details class="lang-sub">
@@ -134,6 +162,7 @@
             </p>
             <p class="badge">Verfügbar</p>
             <p>Preis auf Anfrage</p>
+            <p><a class="btn btn-outline" href="/produkte/plan.html">Details</a></p>
           </article>
           <article class="card">
             <p class="card-index">horaria.vehicle</p>
@@ -144,6 +173,7 @@
             </p>
             <p class="badge">In Planung</p>
             <p>Preis auf Anfrage</p>
+            <p><a class="btn btn-outline" href="/produkte/vehicle.html">Details</a></p>
           </article>
           <article class="card">
             <p class="card-index">horaria.crew</p>
@@ -153,6 +183,7 @@
             </p>
             <p class="badge">In Planung</p>
             <p>Preis auf Anfrage</p>
+            <p><a class="btn btn-outline" href="/produkte/crew.html">Details</a></p>
           </article>
           <article class="card">
             <p class="card-index">horaria.analysis</p>
@@ -163,6 +194,7 @@
             </p>
             <p class="badge">In Planung</p>
             <p>Preis auf Anfrage</p>
+            <p><a class="btn btn-outline" href="/produkte/analysis.html">Details</a></p>
           </article>
         </div>
       </div>
