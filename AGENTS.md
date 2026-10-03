@@ -69,11 +69,19 @@ Same convention as the main horaria repo:
   `horaria.crew` (Dienstplanung, in Planung) and `horaria.analysis`
   (Auswertung & Reporting, in Planung) — refer to them by these names
   everywhere
-- Keep the header/footer shell identical on every page (nav: Funktionen,
-  Preise, language switcher, Registrieren, Login) — on mobile (≤40rem) the
-  nav links, auth buttons and language selection collapse into a hamburger
-  menu (`.nav-switcher`, a `<details>` dropdown like the language switcher);
-  inside it, languages open in a nested `.lang-sub` dropdown
+- Keep the header/footer shell identical on every page (nav: Produkte
+  dropdown, Preise, language switcher, Registrieren, Login) — the Produkte
+  toggle (`.product-switcher`, a `<details>` dropdown) lists the four modules;
+  on mobile (≤40rem) the nav links, auth buttons and language selection
+  collapse into a hamburger menu (`.nav-switcher`, a `<details>` dropdown
+  like the language switcher); inside it, Produkte and languages open in
+  nested `.product-sub` / `.lang-sub` dropdowns
+- Product pages live under `/produkte/` (`plan.html`, `vehicle.html`,
+  `crew.html`, `analysis.html`), German-only for now with root-absolute
+  asset paths and no `hreflang` (single language version); the English
+  header's "Products" dropdown links to these German pages until
+  translations exist. Landing page and pricing module cards link to them
+  with "Details" buttons
 - Language switcher in the header: borderless `<details>` toggle (globe icon +
   current language code + caret) opening a dropdown with Deutsch / English /
   Français greyed as "in preparation". English pages live under `/en/`

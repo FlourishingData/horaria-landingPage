@@ -207,12 +207,47 @@ body {
   transform: rotate(180deg);
 }
 
+/* ─── Product switcher (Produkte dropdown, desktop nav) ─── */
+.product-switcher {
+  position: relative;
+  user-select: none;
+}
+
+.product-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  cursor: pointer;
+  list-style: none;
+  border-radius: var(--radius);
+}
+
+.product-toggle::-webkit-details-marker {
+  display: none;
+}
+
+.product-toggle:hover,
+.product-switcher[open] .product-toggle {
+  color: var(--text);
+}
+
+.product-toggle.is-active {
+  color: var(--amber);
+}
+
+.product-switcher[open] .product-toggle .lang-caret {
+  transform: rotate(180deg);
+}
+
 /* Mobile nav switcher (hamburger; hidden on desktop, enabled in the media query) */
 .nav-switcher {
   display: none;
 }
 
-.lang-menu {
+.lang-menu,
+.product-menu {
   position: absolute;
   top: calc(100% + 0.5rem);
   inset-inline-end: 0;
@@ -226,8 +261,13 @@ body {
   box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.35);
 }
 
+.product-menu {
+  min-width: 20rem;
+}
+
 .lang-menu a,
-.lang-menu .lang-soon {
+.lang-menu .lang-soon,
+.product-menu a {
   display: flex;
   align-items: center;
   padding: 0.45rem 0.7rem;
@@ -237,11 +277,13 @@ body {
   text-decoration: none;
 }
 
-.lang-menu a:hover {
+.lang-menu a:hover,
+.product-menu a:hover {
   background: var(--surface);
 }
 
-.lang-menu a[aria-current="true"] {
+.lang-menu a[aria-current="true"],
+.product-menu a[aria-current="true"] {
   color: var(--amber);
   font-weight: 700;
 }
@@ -839,7 +881,8 @@ dialog.notice form {
     font-weight: 700;
   }
 
-  .lang-sub-toggle {
+  .lang-sub-toggle,
+  .product-sub-toggle {
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -851,30 +894,41 @@ dialog.notice form {
     list-style: none;
   }
 
-  .lang-sub-toggle::-webkit-details-marker {
+  .lang-sub-toggle::-webkit-details-marker,
+  .product-sub-toggle::-webkit-details-marker {
     display: none;
   }
 
-  .lang-sub-toggle:hover {
+  .lang-sub-toggle:hover,
+  .product-sub-toggle:hover {
     background: var(--surface);
   }
 
-  .lang-sub-toggle .lang-caret {
+  .product-sub-toggle.is-active {
+    color: var(--amber);
+    font-weight: 700;
+  }
+
+  .lang-sub-toggle .lang-caret,
+  .product-sub-toggle .lang-caret {
     margin-inline-start: auto;
     transition: transform 0.15s ease;
   }
 
-  .lang-sub[open] > .lang-sub-toggle .lang-caret {
+  .lang-sub[open] > .lang-sub-toggle .lang-caret,
+  .product-sub[open] > .product-sub-toggle .lang-caret {
     transform: rotate(180deg);
   }
 
-  .lang-sub-menu {
+  .lang-sub-menu,
+  .product-sub-menu {
     list-style: none;
     padding: 0 0.35rem 0.35rem;
   }
 
   .lang-sub-menu a,
-  .lang-sub-menu .lang-soon {
+  .lang-sub-menu .lang-soon,
+  .product-sub-menu a {
     display: flex;
     align-items: center;
     padding: 0.4rem 0.7rem 0.4rem 2rem;
@@ -884,11 +938,13 @@ dialog.notice form {
     text-decoration: none;
   }
 
-  .lang-sub-menu a:hover {
+  .lang-sub-menu a:hover,
+  .product-sub-menu a:hover {
     background: var(--surface);
   }
 
-  .lang-sub-menu a[aria-current="true"] {
+  .lang-sub-menu a[aria-current="true"],
+  .product-sub-menu a[aria-current="true"] {
     color: var(--amber);
     font-weight: 700;
   }

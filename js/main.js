@@ -30,8 +30,9 @@ if (yearEl) {
 
 /**
  * Dropdown widgets (<details>-based, work without JS): language switcher,
- * mobile nav menu and the nested language submenu. JS enhancement: close
- * on outside click and Escape; closing a menu also closes its nested menus.
+ * products dropdown, mobile nav menu and their nested submenus. JS
+ * enhancement: close on outside click and Escape; closing a menu also
+ * closes its nested menus.
  */
 function closeDetailsTree(root) {
   root.querySelectorAll('details[open]').forEach((nested) => {
@@ -40,7 +41,7 @@ function closeDetailsTree(root) {
   root.open = false;
 }
 
-document.querySelectorAll('.lang-switcher, .nav-switcher, .lang-sub').forEach((switcher) => {
+document.querySelectorAll('.lang-switcher, .nav-switcher, .lang-sub, .product-switcher, .product-sub').forEach((switcher) => {
   document.addEventListener('click', (event) => {
     if (switcher.open && !switcher.contains(event.target)) {
       closeDetailsTree(switcher);

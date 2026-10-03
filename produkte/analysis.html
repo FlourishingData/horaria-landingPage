@@ -3,21 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- Security headers (arc42 §4.4). All assets self-hosted — CSP stays strict.
-       frame-ancestors/HSTS cannot be set via meta; HTTPS is enforced at the host. -->
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; connect-src 'self'; base-uri 'none'; form-action 'none'">
   <meta name="referrer" content="strict-origin-when-cross-origin">
 
-  <title>horaria — Die Planungsplattform für öffentlichen Verkehr</title>
-  <meta name="description" content="horaria deckt die Planungskette öffentlicher Verkehrsangebote ab: horaria.plan heute, horaria.vehicle und horaria.crew als nächste Schritte. Im Browser, ohne Installation.">
-  <link rel="alternate" hreflang="de" href="/">
-  <link rel="alternate" hreflang="en" href="/en/">
-  <link rel="alternate" hreflang="x-default" href="/">
+  <title>horaria.analysis — Auswertung &amp; Reporting — horaria</title>
+  <meta name="description" content="horaria.analysis liefert Kennzahlen und Auswertungen über Fahrplan, Umläufe und Dienste hinweg — dort, wo die Planungsdaten entstehen. In Planung.">
 
-  <link rel="icon" href="assets/images/Horaria_AppIcon2.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="css/styles.css">
-  <script src="js/main.js" defer></script>
+  <link rel="icon" href="/assets/images/Horaria_AppIcon2.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="/js/main.js" defer></script>
 </head>
 <body>
   <dialog class="notice" id="preview-notice" aria-labelledby="notice-title" open>
@@ -35,12 +29,12 @@
   <header class="site-header">
     <div class="container header-row">
       <a class="logo" href="/" aria-label="horaria — Startseite">
-        <img src="assets/images/Horaria_Logo.svg" alt="horaria" width="118" height="40">
+        <img src="/assets/images/Horaria_Logo.svg" alt="horaria" width="118" height="40">
       </a>
       <span class="header-divider" aria-hidden="true"></span>
       <nav class="header-nav">
         <details class="product-switcher">
-          <summary class="product-toggle" aria-haspopup="true">
+          <summary class="product-toggle is-active" aria-haspopup="true">
             Produkte
             <svg class="lang-caret" viewBox="0 0 10 6" width="10" height="6" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
               <path d="M1.5 1l3.5 3.5L8.5 1"/>
@@ -50,7 +44,7 @@
             <li><a href="/produkte/plan.html">horaria.plan — Fahrplanplanung</a></li>
             <li><a href="/produkte/vehicle.html">horaria.vehicle — Umlaufplanung</a></li>
             <li><a href="/produkte/crew.html">horaria.crew — Dienstplanung</a></li>
-            <li><a href="/produkte/analysis.html">horaria.analysis — Auswertung &amp; Reporting</a></li>
+            <li><a href="/produkte/analysis.html" aria-current="true">horaria.analysis — Auswertung &amp; Reporting</a></li>
           </ul>
         </details>
         <a class="nav-link" href="/preise.html">Preise</a>
@@ -69,7 +63,7 @@
             </svg>
           </summary>
           <ul class="lang-menu">
-            <li><a href="/" hreflang="de" lang="de" aria-current="true">Deutsch</a></li>
+            <li><a href="/" hreflang="de" lang="de">Deutsch</a></li>
             <li><a href="/en/" hreflang="en" lang="en">English</a></li>
             <li><span class="lang-soon" title="Französisch — in Vorbereitung" lang="fr">Français</span></li>
           </ul>
@@ -88,7 +82,7 @@
           <ul class="nav-menu">
             <li class="nav-products">
               <details class="product-sub">
-                <summary class="product-sub-toggle" aria-haspopup="true">
+                <summary class="product-sub-toggle is-active" aria-haspopup="true">
                   Produkte
                   <svg class="lang-caret" viewBox="0 0 10 6" width="10" height="6" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
                     <path d="M1.5 1l3.5 3.5L8.5 1"/>
@@ -98,7 +92,7 @@
                   <li><a href="/produkte/plan.html">horaria.plan — Fahrplanplanung</a></li>
                   <li><a href="/produkte/vehicle.html">horaria.vehicle — Umlaufplanung</a></li>
                   <li><a href="/produkte/crew.html">horaria.crew — Dienstplanung</a></li>
-                  <li><a href="/produkte/analysis.html">horaria.analysis — Auswertung &amp; Reporting</a></li>
+                  <li><a href="/produkte/analysis.html" aria-current="true">horaria.analysis — Auswertung &amp; Reporting</a></li>
                 </ul>
               </details>
             </li>
@@ -117,7 +111,7 @@
                   </svg>
                 </summary>
                 <ul class="lang-sub-menu">
-                  <li><a href="/" hreflang="de" lang="de" aria-current="true">Deutsch</a></li>
+                  <li><a href="/" hreflang="de" lang="de">Deutsch</a></li>
                   <li><a href="/en/" hreflang="en" lang="en">English</a></li>
                   <li><span class="lang-soon" title="Französisch — in Vorbereitung" lang="fr">Français</span></li>
                 </ul>
@@ -134,127 +128,66 @@
   </header>
 
   <main>
-    <section class="hero">
+    <section class="page-head">
       <div class="container">
-        <p class="eyebrow">Public-Transport-Planning-Plattform</p>
-        <h1>Die Planungsplattform für <span class="accent">öffentlichen Verkehr</span>.</h1>
-        <p class="lede">
-          Vom Fahrplan bis zur Dienstplanung: horaria führt die gesamte
-          Planungskette in einer Oberfläche zusammen — im Browser, im Team,
-          in Echtzeit.
+        <p class="eyebrow">horaria.analysis</p>
+        <h1>Auswertung &amp; Reporting. <span class="accent">Alle Kennzahlen, ein Werkzeug.</span></h1>
+        <p class="badge">In Planung</p>
+        <p class="section-intro">
+          horaria.analysis wertet aus, was die Planung erzeugt: Kennzahlen und
+          Auswertungen über Fahrplan, Umläufe und Dienste hinweg — direkt dort,
+          wo die Daten entstehen.
         </p>
-        <div class="cta-row">
-          <a class="btn btn-primary btn-lg js-login-link" href="https://app.horarium.ch">Jetzt starten</a>
-          <a class="btn btn-outline btn-lg" href="#features">Produkte ansehen</a>
-        </div>
       </div>
     </section>
 
-    <section class="stats" aria-label="Kennzahlen">
-      <div class="container stats-grid">
-        <div class="stat">
-          <span class="stat-value">3</span>
-          <span class="stat-label">Planungsstufen, eine Plattform</span>
-        </div>
-        <div class="stat">
-          <span class="stat-value">&lt; 5 Min.</span>
-          <span class="stat-label">bis zum ersten Fahrplan</span>
-        </div>
-        <div class="stat">
-          <span class="stat-value">100 %</span>
-          <span class="stat-label">im Browser — keine Installation</span>
-        </div>
-        <div class="stat">
-          <span class="stat-value">GTFS</span>
-          <span class="stat-label">Import &amp; Export inklusive</span>
-        </div>
+    <section class="section">
+      <div class="container">
+        <p class="eyebrow">Im Detail</p>
+        <h2>Was horaria.analysis bringt.</h2>
+        <ul class="feature-list">
+          <li>
+            <h3>Kennzahlen über alle Stufen</h3>
+            <p>Fahrleistung, Auslastung und weitere Kennzahlen aus Fahrplan, Umläufen und Diensten — auf einer durchgängigen Datenbasis.</p>
+          </li>
+          <li>
+            <h3>Dort, wo die Daten entstehen</h3>
+            <p>Keine Schnittstellen, keine Exportschläuche: Auswertungen greifen auf dieselben Planungsdaten zu, mit denen Sie arbeiten.</p>
+          </li>
+          <li>
+            <h3>Auf Ihren Betrieb zugeschnitten</h3>
+            <p>Auswertungen lassen sich an die Kennzahlen anpassen, die für Ihren Betrieb zählen.</p>
+          </li>
+          <li>
+            <h3>In Planung</h3>
+            <p>Dieses Modul befindet sich in Entwicklung und rundet die Planungskette ab — nach Fahrplan, Umläufen und Diensten.</p>
+          </li>
+        </ul>
       </div>
     </section>
 
-    <section id="features" class="section">
+    <section class="section">
       <div class="container">
         <p class="eyebrow">Die Planungskette</p>
-        <h2>Jede Stufe baut auf der vorherigen auf.</h2>
+        <h2>Die Kette beginnt — und endet — mit den Daten.</h2>
         <p class="section-intro">
-          Ein gültiger Fahrplan speist die Umlaufplanung, Umläufe speisen die
-          Dienstplanung. Vom leeren Projekt bis zum vollständig ausgestatteten
-          Betrieb — ohne das Werkzeug zu wechseln.
+          Auswertungen brauchen eine solide Basis. Der Einstieg in die Kette
+          ist heute möglich:
         </p>
         <div class="card-grid">
           <article class="card">
             <p class="card-index">horaria.plan</p>
             <h3>Fahrplanplanung</h3>
             <p>
-              Linien, Strecken und Fahrten mit einer Oberfläche, die sich von
-              selbst erklärt. Gemeinsam im Team, in Echtzeit — mit Import und
-              Export offener Formate inklusive GTFS.
+              Linien, Strecken und Fahrten planen — im Team, in Echtzeit,
+              mit GTFS-Import &amp; -Export. Der Anfang der Kette, heute verfügbar.
             </p>
             <p class="badge">Verfügbar</p>
             <p><a class="btn btn-outline" href="/produkte/plan.html">Details</a></p>
           </article>
-          <article class="card">
-            <p class="card-index">horaria.vehicle</p>
-            <h3>Umlaufplanung</h3>
-            <p>
-              Fahrten zu Umläufen und Werkungen zusammenfassen, Fahrzeuge
-              optimal auslasten und sehen, wie viele Fahrzeuge ein Fahrplan
-              wirklich braucht.
-            </p>
-            <p class="badge">In Planung</p>
-            <p><a class="btn btn-outline" href="/produkte/vehicle.html">Details</a></p>
-          </article>
-          <article class="card">
-            <p class="card-index">horaria.crew</p>
-            <h3>Dienstplanung</h3>
-            <p>
-              Dienste, Schichten und Dienstpläne auf Basis der Umläufe planen —
-              bis hinunter zur einzelnen Fahrerkraft.
-            </p>
-            <p class="badge">In Planung</p>
-            <p><a class="btn btn-outline" href="/produkte/crew.html">Details</a></p>
-          </article>
-          <article class="card card--wide">
-            <p class="card-index">horaria.analysis</p>
-            <h3>Auswertung &amp; Reporting</h3>
-            <p>
-              Über allen Stufen: Kennzahlen und Auswertungen aus Fahrplan,
-              Umläufen und Diensten — in einem Werkzeug.
-            </p>
-            <p class="badge">In Planung</p>
-            <p><a class="btn btn-outline" href="/produkte/analysis.html">Details</a></p>
-          </article>
         </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <p class="eyebrow">Warum horaria</p>
-        <h2>Gebaut für Planer:innen.</h2>
-        <ul class="feature-list">
-          <li>
-            <h3>Echtzeit-Zusammenarbeit</h3>
-            <p>Mehrere Planer:innen arbeiten am selben Fahrplan — Änderungen sind sofort für alle sichtbar.</p>
-          </li>
-          <li>
-            <h3>Veröffentlichen &amp; einfrieren</h3>
-            <p>Planperioden werden unter einem Stand veröffentlicht und sind danach unveränderbar — Korrekturen laufen in einer neuen Periode.</p>
-          </li>
-          <li>
-            <h3>Offene Formate</h3>
-            <p>GTFS und NeTEx gehören zum Kern — Import und Export inklusive. Ihre Daten bleiben bei Ihnen.</p>
-          </li>
-          <li>
-            <h3>Kein Update-Stress</h3>
-            <p>horaria läuft im Browser — Sie arbeiten immer mit der aktuellsten Version, ohne Installation und ohne IT-Projekt.</p>
-          </li>
-        </ul>
-        <p class="section-footnote">
-          <strong>Technik im Hintergrund:</strong> Scale-to-Zero — Sie zahlen nur bei
-          Nutzung, nicht für Leerlauf. Cloud-agnostisch — läuft auf AWS, Azure oder
-          Google Cloud und lässt sich jederzeit umziehen, ohne Anbieterbindung.
-          Kubernetes-fähig — Betrieb in Ihrer eigenen Infrastruktur möglich, für
-          maximale Datenhoheit.
+        <p class="section-intro">
+          <a class="btn btn-outline" href="/#features">Alle Module im Überblick</a>
         </p>
       </div>
     </section>
@@ -262,9 +195,9 @@
     <section class="cta-band">
       <div class="container">
         <p class="eyebrow">Bereit?</p>
-        <h2>Ihr nächster Fahrplan beginnt hier.</h2>
-        <p>Melden Sie sich an und legen Sie direkt los — ohne Installation, ohne Schulung.</p>
-        <a class="btn btn-primary btn-lg js-login-link" href="https://app.horarium.ch">Zur App</a>
+        <h2>Jede Kette braucht ein erstes Glied.</h2>
+        <p>Starten Sie mit horaria.plan — die Auswertung baut auf denselben Daten auf.</p>
+        <a class="btn btn-primary btn-lg js-login-link" href="https://app.horarium.ch">Jetzt starten</a>
       </div>
     </section>
   </main>
@@ -273,7 +206,7 @@
     <div class="container footer-row">
       <p class="footer-brand">
         <a class="logo" href="/" aria-label="horaria — Startseite">
-          <img src="assets/images/Horaria_Logo.svg" alt="horaria">
+          <img src="/assets/images/Horaria_Logo.svg" alt="horaria">
         </a>
         <span>&copy; <span id="current-year">2026</span> horaria</span>
       </p>
