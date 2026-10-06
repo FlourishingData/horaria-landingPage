@@ -77,9 +77,13 @@ Same convention as the main horaria repo:
   `horaria.*` name and a one-sentence `.product-item-desc`; on mobile
   (≤40rem) the nav links, auth buttons and language selection collapse into
   a hamburger menu (`.nav-switcher`) — a fixed full-screen `.nav-menu` panel
-  with the same product cards in a nested `.product-sub` accordion,
-  `.lang-sub` language selection and the auth buttons pinned to the bottom
-  (page scroll is locked via JS while the panel is open)
+  with the same product cards in a nested `.product-sub` accordion and the
+  auth buttons pinned to the bottom (page scroll is locked via JS while the
+  panel is open); while the panel is open, a compact `.nav-lang-switcher`
+  `<details>` (a clone of the header language switcher, child of
+  `.nav-switcher`) is revealed in the header row left of the hamburger/X and
+  opens the shared `.lang-menu` dropdown — without JS the `.lang-sub`
+  in-panel language item remains the fallback
 - Product pages live under `/produkte/` (`plan.html`, `vehicle.html`,
   `crew.html`, `analysis.html`), German-only for now with root-absolute
   asset paths and no `hreflang` (single language version); the English
