@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.10.0](https://github.com/FlourishingData/horaria-landingPage/compare/v0.9.0...v0.10.0) (2026-10-06)
+
+
+### Features
+
+* **site:** move mobile language switcher next to the menu close button ([#18](https://github.com/FlourishingData/horaria-landingPage/issues/18)) ([a62936c](https://github.com/FlourishingData/horaria-landingPage/commit/a62936cc5edafebdce0894f3412d0a1709e47a04))
+* **site:** rework header with hover mega-menu and full-screen mobile nav ([#16](https://github.com/FlourishingData/horaria-landingPage/issues/16)) ([7e42c3c](https://github.com/FlourishingData/horaria-landingPage/commit/7e42c3cefbf4228b00932547d639e6d9c40aa1d5))
+
 ## [0.9.0](https://github.com/FlourishingData/horaria-landingPage/compare/v0.8.0...v0.9.0) (2026-10-03)
 
 
