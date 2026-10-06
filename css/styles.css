@@ -272,6 +272,12 @@ body {
   box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.35);
 }
 
+/* Mobile-only clone of the language switcher, rendered inside the open
+   hamburger menu (left of the X); the mobile media query reveals it. */
+.nav-lang-switcher {
+  display: none;
+}
+
 /* Products mega-menu (HeyGen-style hover panel) */
 .product-menu {
   position: absolute;
@@ -975,6 +981,22 @@ body.nav-locked {
     border-radius: 0;
     box-shadow: none;
     padding: 5.25rem 1.25rem 1.25rem;
+  }
+
+  /* With JS the language control moves up into the header row, left of
+     the hamburger/X, while the full-screen menu is open; tapping it opens
+     the shared .lang-menu dropdown. Without JS the in-panel .nav-lang
+     item stays the fallback. */
+  html.js .nav-switcher[open] > .nav-lang-switcher {
+    display: block;
+    position: absolute;
+    top: 50%;
+    inset-inline-end: 3.25rem;
+    transform: translateY(-50%);
+  }
+
+  html.js .nav-menu .nav-lang {
+    display: none;
   }
 
   .nav-menu a.nav-link {
