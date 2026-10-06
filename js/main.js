@@ -1,5 +1,8 @@
 'use strict';
 
+// Marks JS as available for CSS gates (e.g. the mobile full-screen nav).
+document.documentElement.classList.add('js');
+
 /**
  * Single source of truth for the web-app URL (arc42 §4.3):
  * Landing page → click Login → redirect to the app domain →
@@ -63,6 +66,66 @@ document.querySelectorAll('.lang-switcher, .nav-switcher, .lang-sub, .product-sw
     }
   });
 });
+
+/**
+ * Products mega-menu (desktop, HeyGen-style): opens on hover. On
+ * hover-capable pointers a click just keeps it open (close by leaving
+ * the toggle, Escape or an outside click); touch devices keep the
+ * native <details> tap toggle.
+ */
+const hoverCapable = window.matchMedia('(hover: hover) and (pointer: fine)');
+
+document.querySelectorAll('.product-switcher').forEach((switcher) => {
+  const summary = switcher.querySelector('summary');
+  if (!summary) {
+    return;
+  }
+
+  switcher.addEventListener('pointerenter', () => {
+    if (hoverCapable.matches) {
+      switcher.open = true;
+    }
+  });
+
+  switcher.addEventListener('pointerleave', () => {
+    if (hoverCapable.matches) {
+      switcher.open = false;
+    }
+  });
+
+  summary.addEventListener('click', (event) => {
+    if (hoverCapable.matches) {
+      event.preventDefault();
+      switcher.open = true;
+    }
+  });
+});
+
+/**
+ * Mobile hamburger menu: with JS the panel is a fixed full-screen overlay
+ * (html.js CSS gate). The header's backdrop-filter is lifted while the
+ * panel is open (.nav-panel-open) and page scroll is locked, because a
+ * backdrop-filter ancestor would otherwise be the containing block for
+ * the fixed panel. Without JS the <details> markup falls back to a
+ * dropdown panel below the toggle.
+ */
+const navSwitcher = document.querySelector('.nav-switcher');
+if (navSwitcher) {
+  const siteHeader = document.querySelector('.site-header');
+  const mobileBreakpoint = window.matchMedia('(max-width: 40rem)');
+  const syncNavPanel = () => {
+    const open = navSwitcher.open && mobileBreakpoint.matches;
+    document.body.classList.toggle('nav-locked', open);
+    if (siteHeader) {
+      siteHeader.classList.toggle('nav-panel-open', open);
+    }
+  };
+  navSwitcher.addEventListener('toggle', syncNavPanel);
+  if (typeof mobileBreakpoint.addEventListener === 'function') {
+    mobileBreakpoint.addEventListener('change', syncNavPanel);
+  }
+  syncNavPanel();
+}
 
 /**
  * Preview notice (<dialog>): shown on every page until dismissed.
