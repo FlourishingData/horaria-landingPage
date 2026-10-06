@@ -71,11 +71,15 @@ Same convention as the main horaria repo:
   everywhere
 - Keep the header/footer shell identical on every page (nav: Produkte
   dropdown, Preise, language switcher, Registrieren, Login) — the Produkte
-  toggle (`.product-switcher`, a `<details>` dropdown) lists the four modules;
-  on mobile (≤40rem) the nav links, auth buttons and language selection
-  collapse into a hamburger menu (`.nav-switcher`, a `<details>` dropdown
-  like the language switcher); inside it, Produkte and languages open in
-  nested `.product-sub` / `.lang-sub` dropdowns
+  toggle (`.product-switcher`, a `<details>` dropdown) opens a HeyGen-style
+  mega-menu on hover (JS enhancement, click/tap still works): each module is
+  a `.product-item` card with inline SVG icon (`.product-item-icon`), the
+  `horaria.*` name and a one-sentence `.product-item-desc`; on mobile
+  (≤40rem) the nav links, auth buttons and language selection collapse into
+  a hamburger menu (`.nav-switcher`) — a fixed full-screen `.nav-menu` panel
+  with the same product cards in a nested `.product-sub` accordion,
+  `.lang-sub` language selection and the auth buttons pinned to the bottom
+  (page scroll is locked via JS while the panel is open)
 - Product pages live under `/produkte/` (`plan.html`, `vehicle.html`,
   `crew.html`, `analysis.html`), German-only for now with root-absolute
   asset paths and no `hreflang` (single language version); the English
